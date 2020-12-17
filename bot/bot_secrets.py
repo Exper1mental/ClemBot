@@ -29,12 +29,9 @@ class BotSecrets:
         self._bot_prefix = None
         self._gifMe_token = None
         self._repl_url = None
-<<<<<<< Updated upstream
         self._github_url = None
         self._merriam_key = None 
-=======
         self._urbandict_key = None
->>>>>>> Stashed changes
 
     @property
     def client_token(self) -> str:
@@ -188,9 +185,6 @@ class BotSecrets:
         self.bot_prefix = secrets['BotPrefix'] or '!'
         self.gif_me_token = secrets['GifMeToken']
         self.repl_url = secrets['ReplUrl']
-<<<<<<< Updated upstream
         self.github_url = secrets['GithubSourceUrl'] or 'https://github.com/ClemsonCPSC-Discord/ClemBot'
         self.merriam_key = secrets['MerriamKey']
-=======
         self.urbandict_key = secrets['UrbanDictKey']
->>>>>>> Stashed changes
