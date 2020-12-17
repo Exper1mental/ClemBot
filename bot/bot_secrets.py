@@ -29,8 +29,12 @@ class BotSecrets:
         self._bot_prefix = None
         self._gifMe_token = None
         self._repl_url = None
+<<<<<<< Updated upstream
         self._github_url = None
         self._merriam_key = None 
+=======
+        self._urbandict_key = None
+>>>>>>> Stashed changes
 
     @property
     def client_token(self) -> str:
@@ -143,7 +147,6 @@ class BotSecrets:
             raise ConfigAccessError(f'repl_url has not been intialized')
         return self._repl_url
         
-
     @repl_url.setter
     def repl_url(self, value: str) -> None:
         if self._repl_url:
@@ -162,6 +165,18 @@ class BotSecrets:
             raise ConfigAccessError(f'merriam_key has already been initialized')
         self._merriam_key = value
 
+    @property
+    def urbandict_key(self) -> str:
+        if not self._urbandict_key:
+            raise ConfigAccessError(f'urbandict_key has not been intialized')
+        return self._urbandict_key
+        
+    @urbandict_key.setter
+    def urbandict_key(self, value: str) -> None:
+        if self._urbandict_key:
+            raise ConfigAccessError(f'urbandict_key has already been initialized')
+        self._urbandict_key = value
+
     def load_secrets(self, lines: str) -> None:
         secrets = json.loads(lines)
         log.info('Bot Secrets Loaded')
@@ -173,5 +188,9 @@ class BotSecrets:
         self.bot_prefix = secrets['BotPrefix'] or '!'
         self.gif_me_token = secrets['GifMeToken']
         self.repl_url = secrets['ReplUrl']
+<<<<<<< Updated upstream
         self.github_url = secrets['GithubSourceUrl'] or 'https://github.com/ClemsonCPSC-Discord/ClemBot'
         self.merriam_key = secrets['MerriamKey']
+=======
+        self.urbandict_key = secrets['UrbanDictKey']
+>>>>>>> Stashed changes
